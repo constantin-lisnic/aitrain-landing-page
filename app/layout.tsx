@@ -3,6 +3,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "AITrain — AI Automation | Automate ops, leads, and support",
@@ -21,6 +23,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

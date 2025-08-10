@@ -21,7 +21,7 @@ const Hero = () => {
         </h2>
       </div>
       <HeroFeatures />
-      <button className="relative z-10 group mb-20">
+      <div className="relative z-10 group mb-20">
         <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
         <a
           className="relative z-10 px-6 py-3 bg-white text-zinc-700 font-bold rounded-lg block"
@@ -29,7 +29,7 @@ const Hero = () => {
         >
           Explore Work
         </a>
-      </button>
+      </div>
     </div>
   );
 };

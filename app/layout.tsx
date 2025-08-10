@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "AITrain — AI Automation Agency | Automate ops, leads, and support",
+  title: "AITrain — AI Automation | Automate ops, leads, and support",
   description:
     "AITrain builds custom AI agents, automations, and integrations to drive revenue and efficiency. Fast delivery, measurable ROI.",
 };

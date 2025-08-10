@@ -3,11 +3,13 @@ export const testimonials = [
     id: 0,
     content: (
       <>
-        "Agenlabs helped us build our website from scratch to production in a
-        record 1 month time. They took our requirements and delivered a website
-        we are proud of so much that we are thrilled.
+        "AITrain built us a lead qualification system that screens prospects
+        24/7 and routes qualified leads directly to our sales team. We've seen a
+        3x increase in meeting-booked rates and our reps love focusing on warm
+        leads only.
         <br />
-        <br />I couldn't be any happier. Highly recommended. "
+        <br />
+        The ROI was clear within the first month. Absolutely game-changing."
       </>
     ),
     name: "Tyler Durden",
@@ -18,10 +20,10 @@ export const testimonials = [
     id: 1,
     content: (
       <>
-        "Agenlabs are different and one of their kind. They are very
-        professional and have a great team of developers. They are very
-        responsive and always available to help. I would highly recommend them
-        to anyone looking for a website or app development. "
+        "AITrain automated our entire customer support workflow with an AI
+        chatbot that handles 80% of tickets instantly. Our response times
+        dropped from hours to seconds, and customer satisfaction scores jumped
+        40%. The team delivered exactly what they promised."
       </>
     ),
     name: "Michael Scott",

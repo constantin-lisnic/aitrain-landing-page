@@ -13,10 +13,7 @@ export const products = [
         </p>
       </>
     ),
-    images: [
-      "/images/products/lead-qualification-agent-3.png",
-      "/images/products/tailwindmasterkit3.png",
-    ],
+    images: ["/images/products/lead-qualification-agent.png"],
   },
   {
     id: 1,
@@ -32,10 +29,7 @@ export const products = [
         </p>
       </>
     ),
-    images: [
-      "/images/products/algochurn.png",
-      "/images/products/algochurn2.png",
-    ],
+    images: ["/images/products/customer-support-chatbot.png"],
   },
   {
     id: 2,
@@ -51,10 +45,7 @@ export const products = [
         </p>
       </>
     ),
-    images: [
-      "/images/products/cremedigital3.png",
-      "/images/products/cremedigital.png",
-    ],
+    images: ["/images/products/rag-knowledge-assistant.png"],
   },
   {
     id: 3,
@@ -70,6 +61,6 @@ export const products = [
         </p>
       </>
     ),
-    images: ["/images/products/invoker.png", "/images/products/invoker2.png"],
+    images: ["/images/products/outbound-prospecting-automation.png"],
   },
 ];

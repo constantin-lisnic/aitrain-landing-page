@@ -1,7 +1,25 @@
+"use client";
+
 import React from "react";
-import { BlurImage } from "./BlurImage";
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 
 export const CallToAction = ({ headerText, bodyText }: any) => {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "30min" });
+      cal("ui", {
+        theme: "light",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#5dd5ff" },
+          dark: { "cal-brand": "#5dd5ff" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <div className="relative rounded-2xl bg-slate-800   mb-20 mt-20 text-gray-100 max-w-6xl  xl:mx-auto min-h-96 h-full  overflow-hidden pb-4">
       <div
@@ -25,12 +43,14 @@ export const CallToAction = ({ headerText, bodyText }: any) => {
           </p>
 
           <div className="flex justify-center">
-            <a
-              href="mailto:contact@aitrain.agency"
+            <button
               className="inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-white/0 text-white ring-1 ring-slate-100 hover:bg-white/25 hover:ring-slate-900/15 mx-auto"
+              data-cal-namespace="30min"
+              data-cal-link="michaelelliott/30min"
+              data-cal-config='{"layout":"month_view","theme":"light"}'
             >
               Contact Us
-            </a>
+            </button>
           </div>
         </div>
       </div>

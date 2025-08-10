@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IoIosCloseCircleOutline, IoIosMenu } from "react-icons/io";
 import LogoWithText from "./LogoWithText";
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { CustomLink } from "./CustomLink";
@@ -13,6 +15,21 @@ const Navbar = () => {
     { id: 3, name: "Testimonials", link: "/#testimonial" },
   ];
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "30min" });
+      cal("ui", {
+        theme: "light",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#5dd5ff" },
+          dark: { "cal-brand": "#5dd5ff" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <div className="flex flex-row items-center justify-between py-8 max-w-[83rem] mx-auto">
       <LogoWithText
@@ -22,14 +39,16 @@ const Navbar = () => {
       <div className="md:flex flex-row flex-1 hidden items-center  justify-center space-x-14 text-sm text-zinc-600 font-medium hover:text-zinc-800 transition duration-200">
         <DesktopNav navItems={navItems} />
       </div>
-      <a
-        href="mailto:contact@aitrain.agency"
+      <button
         className="hidden md:block relative px-0.5 py-1 text-zinc-600 text-sm rounded-full font-semibold bg-gradient-to-br from-[rgba(5,45,255,.6)] to-[rgba(62,243,255,.6)] hover:shadow-md  hover:shadow-blue-500/30 transition duration-200"
+        data-cal-namespace="30min"
+        data-cal-link="michaelelliott/30min"
+        data-cal-config='{"layout":"month_view","theme":"light"}'
       >
         <span className="w-24 h-10 flex items-center justify-center bg-zinc-100 rounded-full mx-0.5 ">
           Contact
         </span>
-      </a>
+      </button>
       <div className="flex md:hidden">
         <MobileNav navItems={navItems} />
       </div>

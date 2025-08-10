@@ -49,7 +49,7 @@ export const CallToAction = ({ headerText, bodyText }: any) => {
               data-cal-link="michaelelliott/30min"
               data-cal-config='{"layout":"month_view","theme":"light"}'
             >
-              Contact Us
+              Book a Call
             </button>
           </div>
         </div>

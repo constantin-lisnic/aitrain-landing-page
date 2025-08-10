@@ -46,7 +46,7 @@ const Navbar = () => {
         data-cal-config='{"layout":"month_view","theme":"light"}'
       >
         <span className="w-24 h-10 flex items-center justify-center bg-zinc-100 rounded-full mx-0.5 ">
-          Contact
+          Book a Call
         </span>
       </button>
       <div className="flex md:hidden">
@@ -76,6 +76,21 @@ const MobileNav = ({ navItems }: any) => {
     show: { x: 0, opacity: 1 },
   };
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "30min" });
+      cal("ui", {
+        theme: "light",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#5dd5ff" },
+          dark: { "cal-brand": "#5dd5ff" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <>
       <IoIosMenu onClick={() => setOpen(!open)} />
@@ -99,15 +114,17 @@ const MobileNav = ({ navItems }: any) => {
                 </motion.span>
               </CustomLink>
             ))}
-            <motion.a
+            <motion.button
               variants={childItems}
-              href="mailto:contact@aitrain.agency"
+              data-cal-namespace="30min"
+              data-cal-link="michaelelliott/30min"
+              data-cal-config='{"layout":"month_view","theme":"light"}'
               className="relative px-0.5 py-1 text-zinc-600 text-sm rounded-full font-semibold bg-gradient-to-br from-[rgba(5,45,255,.6)] to-[rgba(62,243,255,.6)] hover:shadow-md  hover:shadow-blue-500/30"
             >
               <span className="w-24 h-10 flex items-center justify-center bg-zinc-100 rounded-full mx-0.5 ">
-                Contact
+                Book a Call
               </span>
-            </motion.a>
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>

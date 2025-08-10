@@ -76,6 +76,10 @@ const MobileNav = ({ navItems }: any) => {
     show: { x: 0, opacity: 1 },
   };
 
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "30min" });
@@ -109,7 +113,11 @@ const MobileNav = ({ navItems }: any) => {
             />
             {navItems.map((navItem: any, idx: number) => (
               <CustomLink key={`link=${idx}`} href={navItem.link}>
-                <motion.span variants={childItems} className="block">
+                <motion.span
+                  variants={childItems}
+                  className="block"
+                  onClick={handleLinkClick}
+                >
                   {navItem.name}
                 </motion.span>
               </CustomLink>
